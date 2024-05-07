@@ -1,0 +1,50 @@
+
+<!-- {% include 'blogapp/navbar.html' %} -->
+
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'blogapp/css/register.css' %}" >
+
+    <div class="registration_form">
+        <form class='form_input' method="POST" action='{% url "register"%}'>
+            {% csrf_token %}
+            <label for="firstname">First Name:</label>
+            <input type="text" id="firstname" name="firstname" pattern="[A-Za-z]+" required>
+            <br/>
+
+            <label for="lastname">Last Name:</label>
+            <input type="text" id="lastname" name="lastname" pattern="[A-Za-z]+" required>
+            <br/>
+            <label>Gender:</label>
+            <select name="gender" id="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <br/>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br/>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br/>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            {% for data in pas %}
+                <div >
+                    <p >{{ data }}</p>
+                </div>
+            {% endfor %}
+            <br/>
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" id="confirm_password" name="confirmpassword" required>
+            <br/>
+            <button class='register_btn' type="submit">Register</button>
+            <br/>
+            <a href="{% url 'login'%}" class="have_account">Already have an account?</a>
+        </form>
+    
+</div>
+
+{% endblock content %}

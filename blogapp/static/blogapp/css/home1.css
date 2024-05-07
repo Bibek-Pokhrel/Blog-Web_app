@@ -1,0 +1,102 @@
+/* .divcss{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-right: 900px;
+    margin-left: 100px;
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    background-color: antiquewhite;
+    color: teal;
+}
+
+.outputdiv{
+    margin-left: 900px;
+    margin-top:10px;
+} */
+.description{
+    vertical-align: top;
+    padding-bottom: 50px;
+    padding-right: 10px;
+    padding-left: 10px;
+    
+   
+}
+
+.submit{
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 30px;
+    margin-top: 10px;
+    background-color:teal;
+    color: aliceblue;
+   
+}
+
+#div1css{
+    margin-left:10px;
+    color:rgb(118, 41, 41);
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+#divusername{
+    margin-left: 20px;
+    color: black;
+}
+
+.divcss { /*for post blog */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     /* Adjust as needed */
+    margin-left: 100px;
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    background-color: antiquewhite;
+    color: teal;
+    
+}
+
+.outputdiv {
+    /* for title image description */
+    margin-left: 100px; 
+    margin-right: 100px; 
+    margin-top: 5px;
+    padding-right: 50px;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    
+}
+
+.container {
+    /* for whole post and output */
+    display: flex;
+    
+}
+
+.displaydiv{
+    /* for whole output outside the for loop */
+    margin-left: 100px;
+    padding: 10px;
+    
+}
+
+
+.commentdiv{
+    /* for comment and post */
+    margin-left:100px;
+    color:rgb(118, 41, 41)
+}
+
+
+.blog-comment{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+
+.usercomment{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+}

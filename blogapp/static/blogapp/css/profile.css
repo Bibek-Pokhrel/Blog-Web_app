@@ -1,0 +1,27 @@
+.outputdiv {
+    margin-left: 150px; /* Adjust as needed */
+    margin-top: 5px;
+    padding-right: 50px;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: auto;
+    margin-right:300px
+
+    
+}
+
+.displaydiv{
+    margin-left: 100px;
+    padding: 100px;
+}
+
+#div1css{
+    margin-left:30px;
+    color:rgb(118, 41, 41);
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+

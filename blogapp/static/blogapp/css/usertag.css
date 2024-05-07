@@ -1,0 +1,110 @@
+*{
+    background: #a4bdbf;
+}
+.user_post {
+    margin-left: 40%;
+}
+.user_id {
+    font-size: 30px;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: black;
+    border-bottom: 8px solid black;
+    border-radius: 5px;
+}
+.user_post > h2{
+    font-style: normal;
+    font-size: xx-large;
+    margin-bottom: 10px;
+   
+}
+.user_post > label{
+    font-size: larger;
+
+}
+.title > label{
+    font-size: larger;
+
+}
+.title > .title_area{
+    height: 20px;
+    width: 200px;
+    background: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+#next{
+    height: 30px;
+    width: 70px;
+    background: red;
+    color: black;
+    border: 2px solid #700b03;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+#next:hover{
+    background: black;
+    color: white;
+}
+
+ #textarea{
+    height:30%;
+    width: 35%;
+    border: 3px solid black;
+    background: white;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+
+}
+#files_attached{
+    background: white;
+}
+#imageInput{
+    border: 2px solid black;
+    margin-bottom: 20px;
+
+}
+#tag-to{
+    height: 30px;
+    width: 100px;
+    border: 2px solid black;
+    border-radius: 10px;
+    color: white;
+    background: #700b03;
+    font-weight: bold;
+    font-size: small;
+    text-transform: capitalize;
+    margin-top: 10px;
+}
+.btn_tag{
+    height: 30px;
+    width: 70px;
+    background: red;
+    color: black;
+    border: 2px solid #700b03;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.btn_tag:hover{
+    background: black;
+    color: white;
+}
+.btn_post{
+    height: 30px;
+    width: 100px;
+    background: red;
+    color: black;
+    border: 2px solid #700b03;
+    border-radius: 10px;
+    margin-bottom: 20px;
+
+
+}
+.btn_post:hover{
+    background: black;
+    color: white;
+}
+

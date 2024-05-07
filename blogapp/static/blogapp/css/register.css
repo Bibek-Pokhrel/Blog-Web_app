@@ -1,0 +1,84 @@
+
+.registration_form{
+    background: #aba6a4;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 100vh;
+}
+.form_input > label{
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+} 
+.form_input > #firstname{
+    width: 200px;
+    height: 20px;
+    border: 2px solid black;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.form_input > #lastname{
+    width: 200px;
+    height: 20px;
+    border: 2px solid black;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.form_input > #gender{
+    width: 150px;
+    height: 20px;
+    border: 2px solid black;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.form_input > #email{
+    width: 233px;
+    height: 20px;
+    border: 2px solid black;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.form_input > #username{
+    width: 205px;
+    height: 20px;
+    border: 2px solid black;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.form_input > #password{
+    width: 208px;
+    height: 20px;
+    border: 2px solid black;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.form_input > #confirm_password{
+    width: 150px;
+    height: 20px;
+    border: 2px solid black;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.register_btn{
+    margin-left: 80px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    height: 30px;
+    width: 150px;
+    border-radius: 20px;
+    background: red;
+    border: none;
+}
+.register_btn:hover{
+    background: black;
+    color: white;
+}
+.have_account{
+    margin-left: 60px;
+    font-style: italic;
+    color: blue;
+}
+
+

@@ -1,0 +1,92 @@
+{% include "blogapp/navbar.html" %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'blogapp/css/usertag.css' %}">
+
+    <form method="POST" action='{% url "usertag"%}' class="user_post">
+            {% csrf_token %}
+            <div class="user_id">
+                {{request.user.first_name}} {{request.user.last_name}}
+                <p >User: @{{request.user.username}}</p>
+            </div>
+            
+            <h2 >Create Your Blog....</h2>
+            <div class="title" >
+               <label> Title:</label>
+               <input class="title_area" type='text' row='1' maxlength=100 name='title' value='{{data.title}}' placeholder="Enter title here...">
+             </div>
+             <br/>
+              <button type='submit' id="next" >Next</button>
+              <br/> 
+              
+    </form>
+        
+                {% for i in data %}
+
+                <h3 style ="margin-left:580px">Blog Title is:  {{i.title}}</h3>
+
+                <form method="POST" action='{% url "tagu" i.reference_id %}' class="title_area" style ="margin-left:580px">
+                    {% csrf_token %}
+                        <label> Tag Other Users:</label> <br/>
+                        <select id="tag-to" name='tag_to' >
+                        {% for j in user1 %}
+                        <option>{{j.username}}</option>
+                        {% endfor %}
+                        </select>
+                        <button type='submit' class='btn_tag' >Tag</button>
+                </form>
+            
+                <form method="POST" action='{% url "bio" i.reference_id %}' class="post_details" style ="margin-left:580px">
+                    {% csrf_token %}
+                    <label>Description:</label>
+                    <br>
+                    <textarea id="textarea" row='100' column='1000' name='description'></textarea><br>
+                        <!-- Input field for selecting a file -->
+                        <label >Attach Files:</label><br>
+                        <input type="file" id="imageInput" accept="image/*" name='image'>
+                        <button type='submit' class="btn_post" >Post Blog</button>
+                </form>
+                        <br>
+                        <a class="btn_post" href='{% url "home"%}' style="text-decoration:none; magrin-left:none;">GO to homepage</a>
+                          
+                
+                {% endfor %}
+            </div> 
+
+            <!-- Display the selected image (optional) -->
+            <img id="selectedImage" name='image2'>
+
+            <!-- JavaScript to handle file selection -->
+            <script>
+                // Get the input element and image element
+                const imageInput = document.getElementById('imageInput');
+                const selectedImage = document.getElementById('selectedImage');
+
+                // Add an event listener to the input element
+                imageInput.addEventListener('change', function () {
+                    // Check if a file is selected
+                    if (this.files && this.files[0]) {
+                        // Get the selected file
+                        const selectedFile = this.files[0];
+
+                        // Create a FileReader to read the file
+                        const reader = new FileReader();
+
+                        // Set the callback function when the file is loaded
+                        reader.onload = function (e) {
+                            // Set the source of the image element to the loaded file data
+                            selectedImage.src = e.target.result;
+
+                            // Display the image
+                            selectedImage.style.display = 'block';
+                        };
+
+                        // Read the file as a data URL
+                        reader.readAsDataURL(selectedFile);
+                    }
+                });
+            </script>
+    
+
+{% endblock content%}

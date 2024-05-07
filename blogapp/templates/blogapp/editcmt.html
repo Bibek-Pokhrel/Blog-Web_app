@@ -1,0 +1,16 @@
+{% include "blogapp/base.html" %}
+
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'blogapp/css/home.css' %}" >
+<form method="POST" action='{% url "editcmt" cmt1.id %}'>
+    {% csrf_token %}
+    <div class='commentdiv'>
+        <label>Comment</label>
+        <input type='text' name='blogcomment' value='{{cmt1.cmt}}'>
+        <button type='submit' class='submit'  >Post</button>
+    </div>
+</form>
+
+{% endblock content %}

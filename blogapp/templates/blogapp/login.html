@@ -1,0 +1,42 @@
+{% extends "blogapp/base.html"%}
+
+{% block navbar %}
+<!-- include -->
+{% endblock %}
+{%block content%}
+{% load static %}
+<link rel="stylesheet" href="{% static 'blogapp/css/login.css' %}">
+<div class="wrapper">
+    <div class="image">
+        <!-- need to insert image -->
+    </div>
+    <div class='centre'>
+        <form method="POST" action='{% url "login"%}'>
+            {% csrf_token %}
+            {% for data in err%}
+                    <div style="padding-left:85px;color:red">
+                        <p >{{data}}</p>
+                    </div>
+                {% endfor %}
+            <ul>
+                <label style="color: white;">Username</label>
+                <input type='text' placeholder='username' class="box" name='username'>
+            </ul>
+            <ul>
+                <label style="color: white;">Password</label>
+                <input type='password' placeholder='password'class='box' name='password'>
+            </ul>
+            <ul>
+                <input type="checkbox" id="terms" required>
+                <label style="color:white;">I agree to the <span style="color:red;">terms</span> and <span style="color:red;">Privacy Policy</span></label>
+            </ul>
+            <ul>
+                <button type='submit' class='login'>Log In</button>
+                
+                <i class="register">Don't have an account?<a href='{% url "register"%}' style="color: red; text-decoration: none;">Register</a></i>
+            </ul>
+        </form>
+    </div>
+</div>
+
+{%endblock content%}

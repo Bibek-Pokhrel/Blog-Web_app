@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+    
+}
+.signin_signup{
+   
+    list-style: none;
+    margin-left: 83%;
+    margin-bottom: 2px;
+    display: flex;
+
+    gap: 30px;
+
+}
+#sign_in{
+    border: none;
+    text-decoration: none;
+    font-size: large;
+    color: black;
+    width: 100px;
+    background: aqua;
+    padding: 10px;
+    text-align: center;
+  
+    border-radius: 20px;
+    display: block;
+}
+#sign_up{
+    border: none;
+    text-decoration: none;
+    font-size: large;
+    color: black;
+    width: 100px;
+    background: aqua;
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+    
+    display: block;
+}
+#sign_in:hover{
+    color: red;
+}
+#sign_up:hover{
+    color: red;
+}
+

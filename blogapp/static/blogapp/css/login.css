@@ -1,0 +1,51 @@
+body{
+    background: #4c5159;
+    
+}
+.wrapper> .image{
+    background: url(../image/imageofPng.jpeg);
+    display: grid;
+    align-content: flex-start;
+    background-repeat: no-repeat;
+
+
+}
+.centre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+.box{
+    margin-bottom: 60px;
+    width: 225px
+}
+
+.login{
+    border: none;
+    text-decoration: none;
+    font-size: large;
+    color: black;
+    width: 300px;
+    background: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    align-items: center;
+    display: block;
+}
+
+.login:hover{
+    background-color: red;
+    transition: 0.4s ease-in;
+}
+
+.box{
+    padding: 10px;
+    border-radius: 20px;
+}
+.register{
+    color:white;
+    display: block;
+    margin-top: 20px;
+}

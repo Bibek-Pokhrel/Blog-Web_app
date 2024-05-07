@@ -1,0 +1,113 @@
+
+
+
+{% include "blogapp/navbar.html" %}
+          
+
+ 
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'blogapp/css/home.css' %}">
+
+<div class="link-user_id">
+    <div class="link">
+
+        <a href='{% url "usertag" %}' class="create_blog_link">CREATE YOUR BLOG</a><br><br>
+        
+    </div>
+    <div class="user_id">
+        <a href="{% url 'profile'%}" id="user-fullname">{{request.user.first_name}} {{request.user.last_name}}</a>
+       <br>
+        <p id="username">user:@{{request.user.username}}</p>
+    </div>
+    
+
+</div>
+        <div class="post_container">
+                
+                {% for i in data %}
+                    <div class="blog-comment">
+                        <h3 style="color:red;text-transform:capitalize">{{i.firstname}} {{i.lastname}}</h3>
+                        <p >({{i.created_at}})</p>
+                        <div class="outputdiv">
+
+                            <h4 >{{i.title}}</h4>
+                            <br>
+                            {% if i.image %}
+                            <div >
+                                <img src='{{i.image.url}}' style="max-width: 500px; max-heigth:500px;" >
+                            </div>
+                            {% else %}
+                                <img src='#' style="max-width: 500px; max-heigth:500px;" >
+
+                            {% endif %}
+                            <br>
+                            {{i.description}}<br>
+
+                        </div>
+
+                            <form method="POST" action='{% url "commentpost" i.reference_id %}'>
+                                {% csrf_token %}
+                                <div class='commentdiv'>
+                                    <label>Review</label>
+                                    <input type='text' name='blogcomment'>
+                                    <button type='submit' class='submit' >Post</button>
+                                </div>
+                            </form><br>
+                            <div >
+                                {% for j  in data1  %}
+                                <div class="usercomment">
+                                    {% if j.comment_id == i.reference_id%}
+                                    <div class="comm-time">
+                                        <h6 >{{j.comment_by}}</h6>
+                                        <p>({{j.comment_time}})</p>
+                                        {% if j.comment_by == request.user.username %}
+                                        <div class="comment_edi-dle">
+                                            <div id="comment_text">
+                                                <p  >{{j.cmt}}</p>
+                                            </div>
+                                            <div class="edit_delete" >
+                                                <a href="{% url 'editcmt' j.id %}" class="edit" >Edit</a>
+                                                <form method="POST" action='{% url "delete" j.id %}'>
+                                                    {% csrf_token %}
+                                                    <button type="submit" class="btn_delete" >Delete</button>
+                                                </form>
+                                            </div>
+
+                                        </div>
+                                        
+                                        
+                                        {% endif %}
+                                        
+                                    </div>
+                                    
+                                    {% endif %}
+                                </div>
+                                {% endfor %}
+                            </div>
+                    </div>
+                            
+        </div> 
+    
+                
+            {% endfor %}
+            {% if searched %}
+                <p id="show_result">Showing results for: {{searched}}</p>
+            {% else %}
+                
+            {% endif %}
+            {% if results %}
+                {% for blog_post in results %}
+                    <div class="searched_result">
+                        <a href="{% url 'searchprofile' blog_post.id %}">{{blog_post.firstname}} {{blog_post.lastname}}</a><br>
+                    </div><br>
+                {% endfor %}
+              {% else %}
+                {% if searched %}
+                    <p>No results found for {{searched}}</p>
+                {% endif %}
+            {% endif %}
+  
+
+{% endblock content %}

@@ -1,0 +1,107 @@
+{% include "blogapp/navbar.html"%}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'blogapp/css/home.css' %}">
+<div class="post_container">
+                
+    {% for i in data %}
+        <div class="blog-comment">
+            <h5 >{{i.firstname}} {{i.lastname}}</h5>
+            <p >({{i.created_at}})</p>
+            <div class="outputdiv">
+
+                <h6 >{{i.title}}</h6>
+                <br>
+                <div >
+                    {% if i.image %}
+                            <div >
+                                <img src='{{i.image.url}}' style="max-width: 500px; max-heigth:500px;" >
+                            </div>
+                            {% else %}
+                                <img src='#' style="max-width: 500px; max-heigth:500px;" >
+
+                            {% endif %}
+                </div>
+                <br>
+                {{i.description}}<br><br>
+
+            </div>
+
+                <form method="POST" action='{% url "commentpost" i.reference_id %}'>
+                    {% csrf_token %}
+                    <div class='commentdiv'>
+                        <label>Review</label>
+                        <input type='text' name='blogcomment'>
+                        <button type='submit' class='submit' >Post</button>
+                    </div>
+                </form>
+                <div >
+                    {% for j  in data1  %}
+                    <div class="usercomment">
+                        {% if j.comment_id == i.reference_id%}
+                        <div class="comm-time">
+                            <h6 >{{j.comment_by}}</h6>
+                            <p>({{j.comment_time}})</p>
+                            <p  >{{j.cmt}}</p>
+                            
+                        </div>
+                        
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+        </div>
+    {% endfor %}          
+
+
+    {% for i in tagblog %}
+        <div class="blog-comment">
+            <h5 >{{i.firstname}} {{i.lastname}}</h5>
+            <p >({{i.created_at}})</p>
+            <div class="outputdiv">
+
+                <h6 >{{i.title}}</h6>
+                <br>
+                <div >
+                    {% if i.image %}
+                            <div >
+                                <img src='{{i.image.url}}' style="max-width: 500px; max-heigth:500px;" >
+                            </div>
+                            {% else %}
+                                <img src='#' style="max-width: 500px; max-heigth:500px;" >
+
+                            {% endif %}
+                </div>
+                <br>
+                {{i.description}}<br><br>
+
+            </div>
+
+                <form method="POST" action='{% url "commentpost" i.reference_id %}'>
+                    {% csrf_token %}
+                    <div class='commentdiv'>
+                        <label>Review</label>
+                        <input type='text' name='blogcomment'>
+                        <button type='submit' class='submit' >Post</button>
+                    </div>
+                </form>
+                <div >
+                    {% for j  in data1  %}
+                    <div class="usercomment">
+                        {% if j.comment_id == i.reference_id%}
+                        <div class="comm-time">
+                            <h6 >{{j.comment_by}}</h6>
+                            <p>({{j.comment_time}})</p>
+                            <p  >{{j.cmt}}</p>
+                            
+                        </div>
+                        
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+        </div>
+    {% endfor %}          
+</div>
+{% endblock content %}

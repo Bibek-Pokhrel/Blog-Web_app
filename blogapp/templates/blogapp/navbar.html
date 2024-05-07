@@ -1,0 +1,36 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'blogapp/css/navbar.css' %}">
+<nav class="container">
+  <div class="logo">
+    <a class="navbar-brand" href="{% url 'home'%}">BL<span>OG</span></a>
+  </div>
+  
+  <div class="nav-items">
+    <ul>
+               
+      <li class="nav-profile"><a href="{% url 'profile'%}">Profile</a></li>
+      <li class="nav-profile"><a href="{% url 'rooms'%}">Rooms</a></li>
+      <li class="nav-contact"><a  href="{% url 'contact'%}">Contact</a></li>
+        
+    </ul>
+  </div>
+      
+    <div class="search-logout">
+        
+        <div class="search">
+          <form class="search-login" method="GET" role="search" action="{% url 'searchbar'%}">
+            {% csrf_token %}
+            <input class="search-area" type="search" placeholder="Search" aria-label="Search" name="search"></input>
+            <a class="" type="submit" href="{% url 'searchbar'%}" ></a>
+          </form>
+        </div>
+        <div>
+        <button class="logout-btn" > <a  type="submit" href="{% url 'logout'%}">Logout</a></button>
+
+        </div>
+
+        
+    </div>  
+
+ 
+  </nav>

@@ -1,0 +1,36 @@
+#div1css{
+    margin-left: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+    font-weight: bold;
+
+}
+#div1css:hover{
+    text-decoration: underline;
+    font-style: italic;
+}
+#divusername{
+    margin-left: 100px;
+    font-style: italic;
+}
+#text{
+    margin-left: 50%;
+
+}
+.title > label{
+    font-weight: bold;
+     
+}
+.title > input{
+    height: 20px;
+    width: 300px;
+    border: 3px solid black;
+    border-radius: 20px;
+
+}
+.title > .button{
+    background: red;
+
+
+}
+
